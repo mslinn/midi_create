@@ -28,8 +28,8 @@ Gem::Specification.new do |spec|
 
   END_MESSAGE
   spec.require_paths         = ['lib']
-  spec.required_ruby_version = '>= 3.1.0'
-  spec.summary               = 'Write summary of what the gem is for'
+  spec.required_ruby_version = '>= 2.6.0'
+  spec.summary               = 'Creates an empty MIDI file'
   spec.version               = MidiCreate::VERSION
 
   spec.add_dependency 'colorator'

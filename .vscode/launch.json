@@ -5,11 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "env": {"VO_DEBUGGING=true"},
+      "env": {"VO_DEBUGGING": true},
       "args": ["test.mid"],
       "debugPort": "0",
       "name": "Debug midi_create",
-      "script": "lib/midi_create.rb",
+      "script": "exe/midi_create",
       "request": "launch",
       "type": "rdbg",
       "useBundler": true,
