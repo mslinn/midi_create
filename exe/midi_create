@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'midi_create/cli'
+if ENV['VO_DEBUGGING']
+  require_relative '../lib/midi_create'
+else
+  require 'midi_create'
+end
 
-MidiCreate::Cli.start
+midi_create

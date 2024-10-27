@@ -1,6 +1,6 @@
 # `Midi_create` [![Gem Version](https://badge.fury.io/rb/midi_create.svg)](https://badge.fury.io/rb/midi_create)
 
-Description of MidiCreate
+Creates an empty MIDI file.
 
 
 ## Installation
@@ -26,7 +26,9 @@ $ bundle
 
 ## Usage
 
-Describe how to use this gem
+```shell
+$ midi_create filename.mid
+```
 
 
 ## Development

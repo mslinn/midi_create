@@ -1,8 +1,9 @@
-require_relative 'midi_create/version'
+require 'colorator'
 
 # Require all Ruby files in 'lib/', except this file
-Dir[File.join(__dir__, '*.rb')].each do |file|
-  require file unless file.end_with?('/midi_create.rb')
+Dir[File.join("#{__dir__}/midi_create", '*.rb')].each do |file|
+  # puts "Require #{file}"
+  require file
 end
 
-# Write the code for your gem here
+MidiCreate.main

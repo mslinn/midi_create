@@ -31,5 +31,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 3.1.0'
   spec.summary               = 'Write summary of what the gem is for'
   spec.version               = MidiCreate::VERSION
-  spec.add_dependency 'thor', '~> 1.2.2'
+
+  spec.add_dependency 'colorator'
+  spec.add_dependency 'midilib'
+  spec.add_dependency 'optparse'
 end
