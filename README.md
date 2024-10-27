@@ -5,29 +5,31 @@ Creates an empty MIDI file.
 
 ## Installation
 
-Either add this line to your application&rsquo;s `Gemfile`:
-
-```ruby
-gem 'midi_create'
-```
-
-... or add the following to your application&rsquo;s `.gemspec`:
-
-```ruby
-spec.add_dependency 'midi_create'
-```
-
-And then execute:
+Type this at a shell prompt:
 
 ```shell
-$ bundle
+$ gem install midi_create
 ```
 
 
-## Usage
+## Sample Usage
 
 ```shell
 $ midi_create filename.mid
+```
+
+
+### Help Message
+
+```text
+midi_create: Creates an empty MIDI file.
+
+Syntax: midi_create [Options] PATH_TO_MIDI_FILE
+
+Options:
+  -f Overwrite output file if present
+  -h Show this help message
+  -v Verbosity; one of: trace, debug, verbose, info, warning, error, fatal, panic, quiet
 ```
 
 
