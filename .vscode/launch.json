@@ -5,10 +5,23 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "env": {"VO_DEBUGGING": true},
-      "args": ["test.mid"],
+      "env": {
+        "VO_DEBUGGING": true
+      },
+      "args": [
+        "test.mid"
+      ],
       "debugPort": "0",
-      "name": "Debug midi_create",
+      "name": "midi_create test.mid",
+      "script": "exe/midi_create",
+      "request": "launch",
+      "type": "rdbg",
+      "useBundler": true,
+    },
+    {
+      "env": {"VO_DEBUGGING": true},
+      "debugPort": "0",
+      "name": "midi_create help message",
       "script": "exe/midi_create",
       "request": "launch",
       "type": "rdbg",

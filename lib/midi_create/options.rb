@@ -17,7 +17,7 @@ def help(msg = nil)
 end
 
 def parse_options
-  options = { overwrite: false, loglevel: 'warning', verbose: 'info' }
+  options = { overwrite: false }
   OptionParser.new do |parser|
     parser.program_name = File.basename __FILE__
     @parser = parser

@@ -7,12 +7,18 @@ module MidiCreate
     help "Too many parameters specified.\n#{ARGV}" if ARGV.length > 1
 
     @midi_out = ARGV[0]
-    File.delete(@midi_out) if File.exist?(@midi_out) && @options[:overwrite]
+    if File.exist?(@midi_out)
+      if @options[:overwrite]
+        File.delete(@midi_out)
+      else
+        help "Error: File '#{@midi_out}' already exists and -f was not specified."
+      end
+    end
     create
   end
 
   def self.create
-    # Create a new, empty sequence.
+    # Create a new empty MIDI sequence.
     seq = MIDI::Sequence.new
 
     # Write the sequence to a MIDI file.

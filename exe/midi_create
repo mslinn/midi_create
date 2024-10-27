@@ -5,5 +5,3 @@ if ENV['VO_DEBUGGING']
 else
   require 'midi_create'
 end
-
-midi_create
