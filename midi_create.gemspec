@@ -5,14 +5,14 @@ Gem::Specification.new do |spec|
 
   spec.authors               = ['Mike Slinn']
   spec.bindir                = 'exe'
-  spec.executables           = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables           = %w[midi_create]
   spec.description           = <<~END_DESC
     Write a longer description of the gem.
     Use as many lines as you like.
   END_DESC
   spec.email                 = ['mslinn@mslinn.com']
   spec.files                 = Dir['.rubocop.yml', 'LICENSE.*', 'Rakefile', '{lib,spec}/**/*', '*.gemspec', '*.md']
-  spec.homepage              = 'https://github.com/mslinn/midi_create'
+  spec.homepage              = 'https://mslinn.com/av_studio/705-midi-create.html'
   spec.license               = 'MIT'
   spec.metadata = {
     'allowed_push_host' => 'https://rubygems.org',
