@@ -1,6 +1,6 @@
 # `Midi_create` [![Gem Version](https://badge.fury.io/rb/midi_create.svg)](https://badge.fury.io/rb/midi_create)
 
-Creates an empty MIDI file.
+Creates an empty MIDI file with one track at 120 BPM.
 
 
 ## Installation
