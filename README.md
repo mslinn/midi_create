@@ -53,6 +53,7 @@ $ midi_create -f filename.mid
 ```
 
 Like the previous example, plus generate an 8-note scale in the key of C starting at middle C.
+In Pro Tools and Ableton Live, middle C is known as C3.
 [See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
 [and this article](https://studiocode.dev/resources/midi-middle-c/).
 
