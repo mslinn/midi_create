@@ -7,7 +7,7 @@ Pro Tools and Ableton Live will not import a MIDI file unless it contains at lea
 
 ## About Middle C
 
-In Pro Tools and Ableton, middle C is known as C3.
+In Pro Tools and Ableton Live, middle C is known as C3.
 [See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
 [and this article](https://studiocode.dev/resources/midi-middle-c/).
 
