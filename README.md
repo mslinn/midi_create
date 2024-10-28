@@ -20,14 +20,7 @@ $ rbenv rehash
 ```
 
 
-## Sample Usage
-
-```shell
-$ midi_create filename.mid
-```
-
-
-### Help Message
+## Help Message
 
 ```text
 midi_create: Creates an empty MIDI file.
@@ -35,9 +28,49 @@ midi_create: Creates an empty MIDI file.
 Syntax: midi_create [Options] PATH_TO_MIDI_FILE
 
 Options:
+  -b 120   Specify beats per minute (BPM); default is 120 bpm
   -f Overwrite output file if present
   -h Show this help message
   -n Generate notes
+  -t Generate title
+```
+
+
+## Sample Usage
+
+Create a MIDI type 1 file called `filename.mid` with one track in the current directory without any notes or title.
+Fail if the file already exists.
+
+```shell
+$ midi_create filename.mid
+```
+
+
+Like the previous example, but overwrite `filename.mid` if it already exists.
+
+```shell
+$ midi_create -f filename.mid
+```
+
+Like the previous example, plus generate an 8-note scale in the key of C.
+
+```shell
+$ midi_create -fn filename.mid
+```
+
+
+Like the previous example, plus include the title `Test MIDI clip` for the track.
+
+```shell
+$ midi_create -fnt 'Test MIDI clip' filename.mid
+```
+
+
+Like the previous example, plus set BPM to 150.
+BPM can only be specified as an integer; using a decimal point will cause an error.
+
+```shell
+$ midi_create -b 150 -fnt 'Test MIDI clip' filename.mid
 ```
 
 

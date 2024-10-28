@@ -9,10 +9,13 @@
         "VO_DEBUGGING": true
       },
       "args": [
+        "-f",
+        "-n",
+        "-t", "Test_MIDI_title",
         "test.mid"
       ],
       "debugPort": "0",
-      "name": "midi_create test.mid",
+      "name": "midi_create -fnt 'Title' test.mid",
       "script": "exe/midi_create",
       "request": "launch",
       "type": "rdbg",

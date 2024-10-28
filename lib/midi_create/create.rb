@@ -23,11 +23,11 @@ module MidiCreate
     # Create a new empty MIDI sequence.
     seq = MIDI::Sequence.new
 
-    # Create a first track for the sequence. This holds tempo events and stuff like that.
+    # Create a first track for the sequence. This holds tempo events and other data.
     track = Track.new(seq)
     seq.tracks << track
-    track.events << Tempo.new(Tempo.bpm_to_mpq(120))
-    track.events << MetaEvent.new(META_SEQ_NAME, 'This sequence was created by midi_create')
+    track.events << Tempo.new(Tempo.bpm_to_mpq(@options[:bpm]))
+    track.events << MetaEvent.new(META_SEQ_NAME, @options[:title]) if @options[:title]
 
     # Create a track to hold the notes. Add it to the sequence.
     track = Track.new(seq)
@@ -40,9 +40,10 @@ module MidiCreate
       # delta time length of a single quarter note.
       track.events << ProgramChange.new(0, 1, 0)
       quarter_note_length = seq.note_to_delta('quarter')
+      c4 = 60 # There is probably a more elegant way of specifying middle C (C4)
       [0, 2, 4, 5, 7, 9, 11, 12].each do |offset|
-        track.events << NoteOn.new(0, 64 + offset, 127, 0)
-        track.events << NoteOff.new(0, 64 + offset, 127, quarter_note_length)
+        track.events << NoteOn.new(0, c4 + offset, 127, 0)
+        track.events << NoteOff.new(0, c4 + offset, 127, quarter_note_length)
       end
     end
 
