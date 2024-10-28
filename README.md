@@ -5,10 +5,17 @@ Creates an empty MIDI file with one track at 120 BPM.
 
 ## Installation
 
-Type this at a shell prompt:
+Set up Ruby [(here is how)](https://www.mslinn.com/ruby/1000-ruby-setup.html),
+then type the following at a shell prompt:
 
 ```shell
 $ gem install midi_create
+```
+
+If you are running `rbenv` (and you should, according to the instructions mentioned above), type:
+
+```shell
+$ rbenv rehash
 ```
 
 
