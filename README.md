@@ -40,6 +40,11 @@ Options:
 
 Create a MIDI type 1 file called `filename.mid` with one track in the current directory without any notes or title.
 Fail if the file already exists.
+Generate an 8-note scale in the key of C starting at middle C.
+Pro Tools and Ableton Live will not import a MIDI file unless it contains at least one note.
+In both programs, middle C is known as C3.
+[See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
+[and this article](https://studiocode.dev/resources/midi-middle-c/).
 
 ```shell
 $ midi_create filename.mid
@@ -50,15 +55,6 @@ Like the previous example, but overwrite `filename.mid` if it already exists.
 
 ```shell
 $ midi_create -f filename.mid
-```
-
-Like the previous example, plus generate an 8-note scale in the key of C starting at middle C.
-In Pro Tools and Ableton Live, middle C is known as C3.
-[See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
-[and this article](https://studiocode.dev/resources/midi-middle-c/).
-
-```shell
-$ midi_create -fn filename.mid
 ```
 
 
