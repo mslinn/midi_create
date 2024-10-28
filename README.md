@@ -52,7 +52,9 @@ Like the previous example, but overwrite `filename.mid` if it already exists.
 $ midi_create -f filename.mid
 ```
 
-Like the previous example, plus generate an 8-note scale in the key of C.
+Like the previous example, plus generate an 8-note scale in the key of C starting at middle C.
+[See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
+[and this article](https://studiocode.dev/resources/midi-middle-c/).
 
 ```shell
 $ midi_create -fn filename.mid
@@ -60,6 +62,7 @@ $ midi_create -fn filename.mid
 
 
 Like the previous example, plus include the title `Test MIDI clip` for the track.
+Ableton Live ignores the MIDI track title.
 
 ```shell
 $ midi_create -fnt 'Test MIDI clip' filename.mid

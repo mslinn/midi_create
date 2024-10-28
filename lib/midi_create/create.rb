@@ -40,7 +40,9 @@ module MidiCreate
       # delta time length of a single quarter note.
       track.events << ProgramChange.new(0, 1, 0)
       quarter_note_length = seq.note_to_delta('quarter')
-      c4 = 60 # There is probably a more elegant way of specifying middle C (C4)
+      c4 = 69 + 3 # There is probably a more elegant way of specifying middle C (C4)
+      # See https://studiocode.dev/resources/midi-middle-c/
+      # See https://stackoverflow.com/a/69182634/553865
       [0, 2, 4, 5, 7, 9, 11, 12].each do |offset|
         track.events << NoteOn.new(0, c4 + offset, 127, 0)
         track.events << NoteOff.new(0, c4 + offset, 127, quarter_note_length)
