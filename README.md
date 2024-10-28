@@ -1,14 +1,13 @@
 # `Midi_create` [![Gem Version](https://badge.fury.io/rb/midi_create.svg)](https://badge.fury.io/rb/midi_create)
 
 Creates a format 1 (multitrack) MIDI file with one track, defaulting to 120 BPM.
+The generated MIDI file will contain 8 notes in the C major scale, starting at middle C.
 Pro Tools and Ableton Live will not import a MIDI file unless it contains at least one note.
-The MIDI file will contain 8 notes in the C major scale, starting at middle C.
 
 
 ## About Middle C
 
 In Pro Tools and Ableton, middle C is known as C3.
-
 [See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
 [and this article](https://studiocode.dev/resources/midi-middle-c/).
 
@@ -32,6 +31,7 @@ $ rbenv rehash
 ## Help Message
 
 ```text
+$ midi_create -h
 midi_create: Creates a MIDI file containing an 8-note scale in the key of C,
              starting at middle C (C3 in Pro Tools and Ableton Live).
 
@@ -48,9 +48,9 @@ Options:
 
 ## Sample Usage
 
-Create a MIDI type 1 file called `filename.mid` with one track in the current directory without any notes or title.
+Create a MIDI type 1 file called `filename.mid` with one track in the current directory, without a title.
 Fail if the file already exists.
-Generate an 8-note scale in the key of C starting at middle C (C3).
+Include an 8-note scale in the key of C starting at middle C (C3).
 
 ```shell
 $ midi_create filename.mid
@@ -65,7 +65,7 @@ $ midi_create -f filename.mid
 
 
 Like the previous example, plus include the title `Test MIDI clip` for the track.
-Ableton Live ignores the MIDI track title.
+Ableton Live and Pro Tools ignore the MIDI track title, but Guitar Pro uses it.
 
 ```shell
 $ midi_create -ft 'Test MIDI clip' filename.mid
