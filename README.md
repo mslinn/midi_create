@@ -1,6 +1,7 @@
 # `Midi_create` [![Gem Version](https://badge.fury.io/rb/midi_create.svg)](https://badge.fury.io/rb/midi_create)
 
-Creates an empty MIDI file with one track at 120 BPM.
+Creates a MIDI file with one track at 120 BPM.
+By default the MIDI file has no notes, however using the `-n` option will cause a major scale to be included.
 
 
 ## Installation
@@ -36,7 +37,7 @@ Syntax: midi_create [Options] PATH_TO_MIDI_FILE
 Options:
   -f Overwrite output file if present
   -h Show this help message
-  -v Verbosity; one of: trace, debug, verbose, info, warning, error, fatal, panic, quiet
+  -n Generate notes
 ```
 
 

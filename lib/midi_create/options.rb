@@ -10,6 +10,7 @@ def help(msg = nil)
 
     Options:
       -f Overwrite output file if present
+      -n Generate notes
       -h Show this help message
   END_HELP
   printf msg.cyan
@@ -22,8 +23,9 @@ def parse_options
     parser.program_name = File.basename __FILE__
     @parser = parser
 
-    parser.on('-f', '--overwrite', 'Overwrite output MIDI file if present')
-    parser.on_tail('-h', '--help', 'Show this message') do
+    parser.on(     '-f', '--overwrite', 'Overwrite output MIDI file if present')
+    parser.on(     '-n', '--notes',     'Generate notes')
+    parser.on_tail('-h', '--help',      'Show this message') do
       help
     end
   end.order!(into: options)
