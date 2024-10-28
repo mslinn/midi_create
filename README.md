@@ -1,7 +1,16 @@
 # `Midi_create` [![Gem Version](https://badge.fury.io/rb/midi_create.svg)](https://badge.fury.io/rb/midi_create)
 
-Creates a format 1 (multitrack) MIDI file with one track at 120 BPM.
-By default the MIDI file has no notes, however using the `-n` option will cause a major scale to be included.
+Creates a format 1 (multitrack) MIDI file with one track, defaulting to 120 BPM.
+Pro Tools and Ableton Live will not import a MIDI file unless it contains at least one note.
+The MIDI file will contain 8 notes in the C major scale, starting at middle C.
+
+
+## About Middle C
+
+In Pro Tools and Ableton, middle C is known as C3.
+
+[See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
+[and this article](https://studiocode.dev/resources/midi-middle-c/).
 
 
 ## Installation
@@ -23,16 +32,17 @@ $ rbenv rehash
 ## Help Message
 
 ```text
-midi_create: Creates an empty MIDI file.
+midi_create: Creates a MIDI file containing an 8-note scale in the key of C,
+             starting at middle C (C3 in Pro Tools and Ableton Live).
 
 Syntax: midi_create [Options] PATH_TO_MIDI_FILE
 
 Options:
-  -b 120   Specify beats per minute (BPM); default is 120 bpm
-  -f Overwrite output file if present
-  -h Show this help message
-  -n Generate notes
-  -t Generate title
+  -b 120   Specify beats per minute (BPM); default is 120 bpm.
+           Only integers can be used; a decimal point will cause an error.
+  -f       Overwrite the output file if present
+  -t NAME  Use this title for the track
+  -h       Show this help message
 ```
 
 
@@ -40,11 +50,7 @@ Options:
 
 Create a MIDI type 1 file called `filename.mid` with one track in the current directory without any notes or title.
 Fail if the file already exists.
-Generate an 8-note scale in the key of C starting at middle C.
-Pro Tools and Ableton Live will not import a MIDI file unless it contains at least one note.
-In both programs, middle C is known as C3.
-[See a discussion about middle C](https://stackoverflow.com/a/69182634/553865),
-[and this article](https://studiocode.dev/resources/midi-middle-c/).
+Generate an 8-note scale in the key of C starting at middle C (C3).
 
 ```shell
 $ midi_create filename.mid
@@ -62,7 +68,7 @@ Like the previous example, plus include the title `Test MIDI clip` for the track
 Ableton Live ignores the MIDI track title.
 
 ```shell
-$ midi_create -fnt 'Test MIDI clip' filename.mid
+$ midi_create -ft 'Test MIDI clip' filename.mid
 ```
 
 
@@ -70,7 +76,7 @@ Like the previous example, plus set BPM to 150.
 BPM can only be specified as an integer; using a decimal point will cause an error.
 
 ```shell
-$ midi_create -b 150 -fnt 'Test MIDI clip' filename.mid
+$ midi_create -b 150 -ft 'Test MIDI clip' filename.mid
 ```
 
 
